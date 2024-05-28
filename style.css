@@ -1,0 +1,63 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html,body{
+    overflow-x: hidden;
+    height: 100%;
+}
+
+.container{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+
+.clock{
+    position: relative;
+    height: 300px;
+    width: 300px;
+    border-radius: 50%;
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.clock span{
+    position: absolute;
+    transform: rotate(calc(30deg * var(--n)));
+    text-align: center;
+    inset: 12px;
+}
+
+.clock span i{
+    display: inline-block;
+    transform: rotate(calc((-30deg * var(--n))));
+}
+
+.clock::before{
+    content: "";
+    height: 8px;
+    width: 8px;
+    border-radius: 50%;
+    background-color: white;
+    z-index: 2;
+}
+
+.handle{
+    position: absolute;
+    display: flex;
+    align-items: flex-end;
+}
+
+.handle i{
+    position: absolute;
+    height: var(--h);
+    width: 4px;
+}
